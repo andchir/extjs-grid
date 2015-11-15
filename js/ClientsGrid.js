@@ -1,15 +1,15 @@
 
-Ext.ns('App', 'App.clients');
+Ext.ns('App', 'App.grids');
 
 /**
  * ClientsGrid
  *
- * @class App.clients.Grid
+ * @class App.grids.ClientGrid
  * @extends Ext.grid.GridPanel
  * @param Object config
  * @xtype app-clients-grid
  */
-Ext.define('App.clients.Grid', {
+Ext.define('App.grids.ClientGrid', {
     extend: 'Ext.grid.GridPanel',
     xtype: 'app-clients-grid',
     title: 'Clients',
@@ -203,22 +203,43 @@ Ext.define('App.clients.Grid', {
         win.show();
     },
     
+    /**
+     * Modal window - give credit
+     *
+     */
     giveCredit: function(){
-        
-        console.log('giveCredit');
-        
+        var win = Ext.create({
+            xtype: 'app-window-form',
+            title: 'Выдать займ',
+            action: 'credit'
+        });
+        win.show();
     },
     
+    /**
+     * Modal window - show credit
+     *
+     */
     showCredit: function(){
-        
-        console.log('showCredit');
-        
+        var win = Ext.create({
+            xtype: 'app-window-form',
+            title: 'Просмотр займа',
+            action: 'view'
+        });
+        win.show();
     },
     
+    /**
+     * Modal window - show info
+     *
+     */
     showInfo: function(){
-        
-        console.log('showInfo');
-        
+        var win = Ext.create({
+            xtype: 'app-window-form',
+            title: 'Информация',
+            action: 'info'
+        });
+        win.show();
     }
     
 });

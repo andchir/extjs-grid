@@ -1,20 +1,20 @@
 
-Ext.ns('App');
+Ext.ns('App', 'App.windows');
 
 /**
  * WindowGrid
  *
- * @class App.WindowGrid
+ * @class App.windows.WindowGrid
  * @extends Ext.Window
  * @param Object config
  * @xtype app-window-grid
  */
-Ext.define('App.WindowGrid', {
+Ext.define('App.windows.WindowGrid', {
     extend: 'Ext.Window',
     xtype: 'app-window-grid',
-    layout:'fit',
+    layout: 'fit',
     width: 500,
-    height: 'auto',
+    height: 350,
     closeAction: 'close',
     constructor: function(config) {
         Ext.apply(this, config);
@@ -22,7 +22,8 @@ Ext.define('App.WindowGrid', {
         
         //default settings
         this.items = new Ext.grid.GridPanel({
-            autoHeight: true,
+            height: 350,
+            autoHeight: false,
             store: new Ext.data.ArrayStore({
                 autoDestroy: true,
                 fields: [
@@ -49,7 +50,8 @@ Ext.define('App.WindowGrid', {
                 },
                 {
                     header: 'Наименование',
-                    dataIndex: 'name'
+                    dataIndex: 'name',
+                    sortable: false
                 }]
             }),
             viewConfig: {
@@ -79,6 +81,7 @@ Ext.define('App.WindowGrid', {
      * @param {Object} record
      */
     getData: function(record){
+        //get example data
         var data = this.getRandomData();
         return data;
     },
@@ -89,7 +92,7 @@ Ext.define('App.WindowGrid', {
      */
     getRandomData: function(){
         var data = [],
-            count = 10;
+            count = 15;
         for( var i = 1; i <= count; i++ ){
             var tmstamp = new Date(2015, 4, 1).getTime() - Math.floor((Math.random() * (60*60*365*10000))),
                 dt = new Date(tmstamp);
