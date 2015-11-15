@@ -4,7 +4,7 @@ Ext.ns('App', 'App.clients');
 /**
  * ClientsGrid
  *
- * @class ClientsGrid
+ * @class App.clients.Grid
  * @extends Ext.grid.GridPanel
  * @param Object config
  * @xtype app-clients-grid
@@ -81,6 +81,7 @@ Ext.define('App.clients.Grid', {
             {
                 xtype: 'actioncolumn',
                 width: 100,
+                scope: this,
                 items: [
                     //print
                     {
@@ -97,10 +98,7 @@ Ext.define('App.clients.Grid', {
                         icon   : 'img/mail-send.png',
                         iconCls: 'grid-action-icon',
                         tooltip: 'Документы',
-                        handler: function(grid, rowIndex, colIndex) {
-                            var rec = grid.store.getAt(rowIndex);
-                            alert( JSON.stringify( rec.data ) );
-                        }
+                        handler: this.showDocuments
                     },
                     //delete
                     {
@@ -187,6 +185,40 @@ Ext.define('App.clients.Grid', {
                : plural_arr[2]
             );
         return plural;
+    },
+    
+    /**
+     * Show modal window with documents
+     * @param {Object} grid
+     * @param {Number} rowIndex
+     * @param {Number} colIndex
+     */
+    showDocuments: function(grid, rowIndex, colIndex){
+        var rec = grid.store.getAt(rowIndex);
+        var win = Ext.create({
+            xtype: 'app-window-grid',
+            title: 'Документы',
+            record: rec
+        });
+        win.show();
+    },
+    
+    giveCredit: function(){
+        
+        console.log('giveCredit');
+        
+    },
+    
+    showCredit: function(){
+        
+        console.log('showCredit');
+        
+    },
+    
+    showInfo: function(){
+        
+        console.log('showInfo');
+        
     }
     
 });
