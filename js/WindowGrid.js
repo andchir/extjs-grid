@@ -79,6 +79,7 @@ Ext.define('App.windows.WindowGrid', {
     /**
      * Get data
      * @param {Object} record
+     * @returns {Array}
      */
     getData: function(record){
         //get example data
@@ -88,7 +89,7 @@ Ext.define('App.windows.WindowGrid', {
     
     /**
      * Get example random data
-     * @return Array
+     * @returns {Array}
      */
     getRandomData: function(){
         var data = [],

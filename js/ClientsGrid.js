@@ -154,8 +154,8 @@ Ext.define('App.grids.ClientGrid', {
     
     /**
     * Format a number with grouped thousands
-    * @param Number num
-    * @return String
+    * @param {Number} num
+    * @returns {String}
     */
     bigNumberRenderer: function(num) {
         return num.toFixed(2).replace(/(\d)(?=(\d{3})+\b)/g,'$1 ');
@@ -163,8 +163,8 @@ Ext.define('App.grids.ClientGrid', {
     
     /**
     * Perion renderer
-    * @param Number num
-    * @return String
+    * @param {Number} num
+    * @returns {String}
     */
     periodDaysRenderer: function(num) {
         return num + ' ' + this.getPlural(num, ['день','дня','дней']);
@@ -172,9 +172,9 @@ Ext.define('App.grids.ClientGrid', {
     
     /**
     * Plural number word
-    * @param Number num
-    * @param Array plural_arr
-    * @return String
+    * @param {Number} num
+    * @param {Array} plural_arr
+    * @returns {String}
     */
     getPlural: function(num, plural_arr){
         var plural = num % 10 == 1 && num % 100 != 11
