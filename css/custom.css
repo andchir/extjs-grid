@@ -3,6 +3,8 @@ body { padding: 20px; }
 
 /* grid */
 .grid-action-icon { margin: 0 5px; }
+.grid-row-red { background-color: #FFE0E0; }
+.x-grid3-row-over.grid-row-red { background-color: #F7D4D4; background-image: none; }
 
 /* toolbar */
 .x-toolbar-grey-btn .x-btn-tl { background-position: 0 0; }

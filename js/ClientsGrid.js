@@ -147,7 +147,12 @@ Ext.define('App.grids.ClientGrid', {
                 singleSelect: true
             }),
             viewConfig: {
-                forceFit: true
+                forceFit: true,
+                getRowClass: function(record, index) {
+                    return record.data.status == 'issued'
+                        ? 'grid-row-red'
+                        : '';
+                }
             }
         }]);
     },
@@ -168,6 +173,19 @@ Ext.define('App.grids.ClientGrid', {
     */
     periodDaysRenderer: function(num) {
         return num + ' ' + this.getPlural(num, ['день','дня','дней']);
+    },
+    
+    /**
+     * Status name renderer
+     * @param {Number} value
+     * @returns {String}
+     */
+    statusNameRenderer: function(value){
+        var statusNames = {
+            issued: 'выдан',
+            completed: 'погашен'
+        };
+        return statusNames[ value ] ? statusNames[ value ] : value;
     },
     
     /**
