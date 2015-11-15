@@ -177,7 +177,7 @@ Ext.define('App.grids.ClientGrid', {
     
     /**
      * Status name renderer
-     * @param {Number} value
+     * @param {String} value
      * @returns {String}
      */
     statusNameRenderer: function(value){
