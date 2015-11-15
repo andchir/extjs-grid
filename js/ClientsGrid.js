@@ -6,7 +6,7 @@ Ext.ns('App', 'App.grids');
  *
  * @class App.grids.ClientGrid
  * @extends Ext.grid.GridPanel
- * @param Object config
+ * @param {Object} config
  * @xtype app-clients-grid
  */
 Ext.define('App.grids.ClientGrid', {

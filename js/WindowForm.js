@@ -6,7 +6,7 @@ Ext.ns('App', 'App.windows');
  *
  * @class App.windows.WindowForm
  * @extends Ext.Window
- * @param Object config
+ * @param {Object} config
  * @xtype app-window-form
  */
 Ext.define('App.windows.WindowForm', {

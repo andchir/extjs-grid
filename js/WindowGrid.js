@@ -6,7 +6,7 @@ Ext.ns('App', 'App.windows');
  *
  * @class App.windows.WindowGrid
  * @extends Ext.Window
- * @param Object config
+ * @param {Object} config
  * @xtype app-window-grid
  */
 Ext.define('App.windows.WindowGrid', {
